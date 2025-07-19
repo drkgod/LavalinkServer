@@ -1,14 +1,15 @@
-# استخدم صورة Java
 FROM openjdk:17-jdk-slim
 
-# إنشاء مجلد داخل الكونتينر
 WORKDIR /app
 
-# نسخ الملفات
-COPY Lavalink.jar .
+# تثبيت wget وتحميل Lavalink.jar تلقائيًا
+RUN apt-get update && apt-get install -y wget && \
+    wget https://ci.lavalink.dev/snapshots/Lavalink.jar
+
+# نسخ ملف الإعدادات
 COPY application.yml .
 
-# فتح البورت الافتراضي لللافالينك
+# فتح البورت الافتراضي
 EXPOSE 2333
 
 # أمر التشغيل
