@@ -1,0 +1,24 @@
+server:
+  port: ${PORT:8020}  
+
+lavalink:
+  server:
+    password: "athenadev21"
+    sources:
+      youtube: true
+      soundcloud: true
+      spotify: true
+      http: true
+      local: false
+    bufferDurationMs: 4000
+    ytPlaylistLoadLimit: 6
+    ytSearchEnabled: true
+    spotifyPlaylistLoadLimit: 6
+
+metrics:
+  prometheus:
+    enabled: false
+
+
+sentry:
+  dsn: ""
